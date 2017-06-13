@@ -9,6 +9,7 @@
 import UIKit
 
 protocol HomeView: class {
+    func setModels(_ models: [CustomerModel])
     func showLoading()
     func hideLoading()
     func showError()
@@ -17,6 +18,8 @@ protocol HomeView: class {
 
 class HomeVC: UIViewController, HomeView {
     internal var presenter: HomePresenterProtocol!
+    
+    fileprivate var models: [CustomerModel] = []
     
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var errorView: UIView!
@@ -28,6 +31,10 @@ class HomeVC: UIViewController, HomeView {
     }
     
     //MARK: - HomeView
+    
+    func setModels(_ models: [CustomerModel]) {
+        self.models = models
+    }
     
     func showLoading() {
         self.loadingView.isHidden = false
