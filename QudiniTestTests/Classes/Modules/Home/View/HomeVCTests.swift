@@ -56,6 +56,25 @@ class HomeVCTests: XCTestCase {
         XCTAssertTrue(self.sut.errorView.isHidden, "Error view is not hidden!")
     }
     
+    //MARK: - UICollectionViewDataSource
+    
+    func testCorrectNumberOfItems() {
+        let customerModel = CustomerModel(name: "Name", emailAddress: "pablo@gmail.com")
+        self.sut.setModels([customerModel])
+        let items = self.sut.collectionView(self.sut.collectionView, numberOfItemsInSection: 0)
+        
+        XCTAssertEqual(items, 1, "Wrong number of items!")
+    }
+    
+    func testCorrectCell() {
+        let customerModel = CustomerModel(name: "Name", emailAddress: "pablo@gmail.com")
+        self.sut.setModels([customerModel])
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = self.sut.collectionView(self.sut.collectionView, cellForItemAt: indexPath) as! HomeCollectionViewCell
+        
+        XCTAssertEqual(cell.nameLabel.text, customerModel.name, "Wrong name!")
+    }
+    
     //MARK: - Mocks
     
     class HomePresenterMock: HomePresenterProtocol {

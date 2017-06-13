@@ -16,11 +16,12 @@ protocol HomeView: class {
     func hideError()
 }
 
-class HomeVC: UIViewController, HomeView {
+class HomeVC: UIViewController, HomeView, UICollectionViewDelegate, UICollectionViewDataSource {
     internal var presenter: HomePresenterProtocol!
     
     fileprivate var models: [CustomerModel] = []
     
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var errorView: UIView!
     
@@ -34,6 +35,7 @@ class HomeVC: UIViewController, HomeView {
     
     func setModels(_ models: [CustomerModel]) {
         self.models = models
+        self.collectionView?.reloadData()
     }
     
     func showLoading() {
@@ -50,6 +52,23 @@ class HomeVC: UIViewController, HomeView {
     
     func hideError() {
         self.errorView.isHidden = true
+    }
+    
+    //MARK: - UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.models.count;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellID = "HomeCellID"
+        let customerModel = self.models[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! HomeCollectionViewCell
+        cell.nameLabel.text = customerModel.name
+        
+        //TODO set the image view
+        
+        return cell
     }
 }
 

@@ -21,6 +21,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nMi-68-7Nc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DEZ-OA-6Rn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCellID" id="d4R-wp-Sel" customClass="HomeCollectionViewCell" customModule="QudiniTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VmC-ts-cDa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIr-dk-iTR">
+                                                    <rect key="frame" x="4" y="5" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VmC-ts-cDa" firstAttribute="top" secondItem="d4R-wp-Sel" secondAttribute="top" id="1b6-9C-IUN"/>
+                                            <constraint firstItem="zIr-dk-iTR" firstAttribute="centerX" secondItem="d4R-wp-Sel" secondAttribute="centerX" id="bB1-xm-FGH"/>
+                                            <constraint firstAttribute="trailing" secondItem="VmC-ts-cDa" secondAttribute="trailing" id="dUJ-ED-Te7"/>
+                                            <constraint firstItem="zIr-dk-iTR" firstAttribute="top" secondItem="d4R-wp-Sel" secondAttribute="top" constant="5" id="fxh-RH-1A2"/>
+                                            <constraint firstAttribute="bottom" secondItem="VmC-ts-cDa" secondAttribute="bottom" id="kSr-RN-cir"/>
+                                            <constraint firstItem="VmC-ts-cDa" firstAttribute="leading" secondItem="d4R-wp-Sel" secondAttribute="leading" id="liI-uI-AiO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="zIr-dk-iTR" id="Iig-0o-1TF"/>
+                                            <outlet property="pictureImageView" destination="VmC-ts-cDa" id="qrS-sp-kaB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ubi-N8-9XF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="seR-sW-9Ew"/>
+                                </connections>
+                            </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEL-TD-J6e" userLabel="ErrorView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -54,6 +101,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nMi-68-7Nc" secondAttribute="trailing" id="7ju-F5-QI9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nMi-68-7Nc" secondAttribute="bottom" id="A0r-gI-VaC"/>
+                            <constraint firstItem="nMi-68-7Nc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CYd-g7-SPB"/>
+                            <constraint firstItem="nMi-68-7Nc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FeA-a5-uu1"/>
                             <constraint firstItem="gKH-0l-5Xl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jmz-0w-9An"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gEL-TD-J6e" secondAttribute="bottom" id="S8d-Dq-xzo"/>
                             <constraint firstItem="gKH-0l-5Xl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="V1g-AO-VGY"/>
@@ -66,6 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wg6-LA-JSr"/>
                     <connections>
+                        <outlet property="collectionView" destination="nMi-68-7Nc" id="RUz-eX-5Ex"/>
                         <outlet property="errorView" destination="gEL-TD-J6e" id="Ubg-sH-a4g"/>
                         <outlet property="loadingView" destination="gKH-0l-5Xl" id="y2G-PV-Dbi"/>
                     </connections>
