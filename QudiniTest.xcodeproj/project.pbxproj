@@ -15,6 +15,8 @@
 		6E81861B1EF04A9300CEE097 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81861A1EF04A9300CEE097 /* HomePresenter.swift */; };
 		6E81861D1EF04A9300CEE097 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81861C1EF04A9300CEE097 /* HomeInteractor.swift */; };
 		6E8186281EF04A9300CEE097 /* HomeVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186271EF04A9300CEE097 /* HomeVCTests.swift */; };
+		6E81862A1EF04A9300CEE097 /* HomeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186291EF04A9300CEE097 /* HomeConnector.swift */; };
+		6E81862C1EF04A9300CEE097 /* HomeConnectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81862B1EF04A9300CEE097 /* HomeConnectorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		6E81861C1EF04A9300CEE097 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeInteractor.swift; path = Classes/Modules/Home/Interactor/HomeInteractor.swift; sourceTree = "<group>"; };
 		6E8186201EF04A9300CEE097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Others/Info.plist; sourceTree = "<group>"; };
 		6E8186271EF04A9300CEE097 /* HomeVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVCTests.swift; path = Classes/Modules/Home/View/HomeVCTests.swift; sourceTree = "<group>"; };
+		6E8186291EF04A9300CEE097 /* HomeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeConnector.swift; path = Classes/Modules/Home/Connector/HomeConnector.swift; sourceTree = "<group>"; };
+		6E81862B1EF04A9300CEE097 /* HomeConnectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeConnectorTests.swift; path = Classes/Modules/Home/Connector/HomeConnectorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 		6E8186171EF04A9300CEE097 /* Connector */ = {
 			isa = PBXGroup;
 			children = (
+				6E8186291EF04A9300CEE097 /* HomeConnector.swift */,
 			);
 			name = Connector;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 		6E8186261EF04A9300CEE097 /* Connector */ = {
 			isa = PBXGroup;
 			children = (
+				6E81862B1EF04A9300CEE097 /* HomeConnectorTests.swift */,
 			);
 			name = Connector;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			files = (
 				6E81861B1EF04A9300CEE097 /* HomePresenter.swift in Sources */,
 				6E8186191EF04A9300CEE097 /* HomeVC.swift in Sources */,
+				6E81862A1EF04A9300CEE097 /* HomeConnector.swift in Sources */,
 				6E8186111EF04A9300CEE097 /* AppDelegate.swift in Sources */,
 				6E81861D1EF04A9300CEE097 /* HomeInteractor.swift in Sources */,
 			);
@@ -372,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E81862C1EF04A9300CEE097 /* HomeConnectorTests.swift in Sources */,
 				6E8186281EF04A9300CEE097 /* HomeVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

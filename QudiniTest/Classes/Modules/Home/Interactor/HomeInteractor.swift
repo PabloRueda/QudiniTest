@@ -15,4 +15,5 @@ protocol HomeInteractorOutput:class {
 }
 
 class HomeInteractor: HomeInteractorInput {
+    weak internal var output: HomeInteractorOutput!
 }
