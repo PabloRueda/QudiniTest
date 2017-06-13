@@ -29,6 +29,8 @@ class HomeVC: UIViewController, HomeView, UICollectionViewDelegate, UICollection
         super.viewDidLoad()
         
         self.presenter?.viewDidLoad()
+        
+        self.title = NSLocalizedString("Home - Title", comment: "Home List");
     }
     
     //MARK: - HomeView
@@ -90,7 +92,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
     
     func cellSize() -> CGSize {
         let numberOfCells: CGFloat = 2
-        let margin: CGFloat = 20
+        let margin: CGFloat = 5
         let cellWidth = UIScreen.main.bounds.size.width / numberOfCells
         return CGSize(width: cellWidth - margin, height: cellWidth)
     }

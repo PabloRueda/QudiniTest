@@ -28,6 +28,7 @@
 		6E8186401EF0567300CEE097 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81863F1EF0567300CEE097 /* HomeInteractorTests.swift */; };
 		6E8186441EF059A300CEE097 /* CustomerDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */; };
 		6E8186461EF05E7F00CEE097 /* String+Gravatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */; };
+		6E8186481EF0703F00CEE097 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E8186471EF0703F00CEE097 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		6E81863F1EF0567300CEE097 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeInteractorTests.swift; path = Classes/Modules/Home/Interactor/HomeInteractorTests.swift; sourceTree = "<group>"; };
 		6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDTOTests.swift; path = Classes/Common/Network/CustomerDTOTests.swift; sourceTree = "<group>"; };
 		6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Gravatar.swift"; path = "Classes/Common/Categories/String+Gravatar.swift"; sourceTree = "<group>"; };
+		6E8186471EF0703F00CEE097 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Others/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				6E8186121EF04A9300CEE097 /* QudiniTest-Bridging-Header.h */,
+				6E8186471EF0703F00CEE097 /* Localizable.strings */,
 				6E8186061EF04A9300CEE097 /* Info.plist */,
 			);
 			name = Others;
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E8186081EF04A9300CEE097 /* Assets.xcassets in Resources */,
+				6E8186481EF0703F00CEE097 /* Localizable.strings in Resources */,
 				6E81860E1EF04A9300CEE097 /* Main.storyboard in Resources */,
 				6E81860D1EF04A9300CEE097 /* LaunchScreen.storyboard in Resources */,
 			);
