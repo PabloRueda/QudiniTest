@@ -19,3 +19,7 @@ struct NetworkConstants {
 struct GUIConstants {
     static let placeholderImageName = "gravatarPlaceholder"
 }
+
+struct Constants {
+    static let autorefreshTime = 30.0
+}

@@ -62,6 +62,8 @@ class HomePresenterTests: XCTestCase {
         func loadData() {
             self.loadDataWasCalled = true
         }
+        
+        func releaseTimer(){}
     }
     
     class HomeViewMock: HomeView {

@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomeInteractorInput: class {
     func loadData()
+    func releaseTimer()
 }
 
 protocol HomeInteractorOutput:class {
@@ -19,9 +20,16 @@ protocol HomeInteractorOutput:class {
 
 class HomeInteractor: HomeInteractorInput {
     weak internal var output: HomeInteractorOutput!
+    internal var timer: Timer?
     internal var httpClient: HTTPClientProtocol?
     
     func loadData() {
+        if (self.timer == nil) {
+            self.timer = Timer.scheduledTimer(withTimeInterval: Constants.autorefreshTime, repeats: true) { timer in
+                self.requestCustomers()
+            }
+        }
+        
         self.requestCustomers()
     }
     
@@ -38,5 +46,11 @@ class HomeInteractor: HomeInteractorInput {
                 self.output?.didFailToLoadData()
             }
         })
+    }
+    
+    //In this demo we don't use this method because it is just one screen, but in a real example we should invalidate it or we will suffer memory leaks
+    func releaseTimer() {
+        self.timer?.invalidate()
+        self.timer = nil
     }
 }
