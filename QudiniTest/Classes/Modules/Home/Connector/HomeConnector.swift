@@ -28,6 +28,7 @@ class HomeConnector {
         presenter.view = view
         presenter.interactor = interactor
         interactor.output = presenter
+        interactor.httpClient = HTTPClient()
     }
     
     // MARK: - Methods

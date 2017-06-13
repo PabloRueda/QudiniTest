@@ -33,5 +33,7 @@ class HomeConnectorTests: XCTestCase {
         XCTAssertNotNil(presenter.view, "View is nil!")
         XCTAssertNotNil(presenter.interactor, "Interactor is nil!")
         XCTAssertNotNil(interactor.output, "Output interactor is nil!")
+        
+        XCTAssertNotNil(interactor.httpClient, "httpClient is nil!")
     }
 }

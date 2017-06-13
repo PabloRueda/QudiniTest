@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CustomerEntity {
+struct CustomerEntity:Equatable {
     let name: String
     let emailAddress: String?
     let expectedTime: Date
@@ -17,5 +17,9 @@ struct CustomerEntity {
         self.name = name
         self.emailAddress = emailAddress
         self.expectedTime = expectedTime
+    }
+    
+    static func ==(lhs: CustomerEntity, rhs: CustomerEntity) -> Bool {
+        return lhs.name == rhs.name && lhs.emailAddress == rhs.emailAddress && lhs.expectedTime == rhs.expectedTime
     }
 }

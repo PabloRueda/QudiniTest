@@ -42,4 +42,10 @@ extension CustomerDTO {
         self.name = name
         self.emailAddress = emailAddress
     }
+    
+    init(name: String, emailAddress: String?, expectedTime: Date) {
+        self.name = name
+        self.emailAddress = emailAddress
+        self.expectedTime = expectedTime
+    }
 }
