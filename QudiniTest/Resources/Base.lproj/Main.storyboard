@@ -12,7 +12,7 @@
         <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="QudiniTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVCID" id="BYZ-38-t0r" customClass="HomeVC" customModule="QudiniTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,8 +20,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEL-TD-J6e" userLabel="ErrorView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error loading data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfp-Bl-CTs">
+                                        <rect key="frame" x="119" y="323" width="137" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="nfp-Bl-CTs" firstAttribute="centerY" secondItem="gEL-TD-J6e" secondAttribute="centerY" id="AfW-qD-sEw"/>
+                                    <constraint firstItem="nfp-Bl-CTs" firstAttribute="centerX" secondItem="gEL-TD-J6e" secondAttribute="centerX" id="tK5-ih-Ikx"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-0l-5Xl" userLabel="LoadingView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oLr-20-e4P">
+                                        <rect key="frame" x="169.5" y="315.5" width="37" height="37"/>
+                                        <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oLr-20-e4P" firstAttribute="centerY" secondItem="gKH-0l-5Xl" secondAttribute="centerY" id="VR2-fj-QCe"/>
+                                    <constraint firstItem="oLr-20-e4P" firstAttribute="centerX" secondItem="gKH-0l-5Xl" secondAttribute="centerX" id="w9k-mI-6A2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gKH-0l-5Xl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jmz-0w-9An"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gEL-TD-J6e" secondAttribute="bottom" id="S8d-Dq-xzo"/>
+                            <constraint firstItem="gKH-0l-5Xl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="V1g-AO-VGY"/>
+                            <constraint firstAttribute="trailing" secondItem="gKH-0l-5Xl" secondAttribute="trailing" id="cVe-H4-89T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gKH-0l-5Xl" secondAttribute="bottom" id="lkd-aS-Zzj"/>
+                            <constraint firstItem="gEL-TD-J6e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nqB-N8-sg1"/>
+                            <constraint firstItem="gEL-TD-J6e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="p6h-C1-o6g"/>
+                            <constraint firstAttribute="trailing" secondItem="gEL-TD-J6e" secondAttribute="trailing" id="pfV-CO-cyi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="errorView" destination="gEL-TD-J6e" id="Ubg-sH-a4g"/>
+                        <outlet property="loadingView" destination="gKH-0l-5Xl" id="y2G-PV-Dbi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

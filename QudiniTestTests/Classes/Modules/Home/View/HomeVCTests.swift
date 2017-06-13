@@ -30,6 +30,32 @@ class HomeVCTests: XCTestCase {
         XCTAssertTrue(self.presenter.viewDidLoadWasCalled, "View did load was not called!")
     }
     
+    //MARK: - HomeView
+    
+    func testShowLoadingShowLoadView() {
+        self.sut.showLoading()
+        
+        XCTAssertFalse(self.sut.loadingView.isHidden, "Load view is hidden!")
+    }
+    
+    func testHideLoadingHideLoadView() {
+        self.sut.hideLoading()
+        
+        XCTAssertTrue(self.sut.loadingView.isHidden, "Load view is not hidden!")
+    }
+    
+    func testShowErrorShowErrorView() {
+        self.sut.showError()
+        
+        XCTAssertFalse(self.sut.errorView.isHidden, "Error view is hidden!")
+    }
+    
+    func testHideErrorHideErrorView() {
+        self.sut.hideError()
+        
+        XCTAssertTrue(self.sut.errorView.isHidden, "Error view is not hidden!")
+    }
+    
     //MARK: - Mocks
     
     class HomePresenterMock: HomePresenterProtocol {
