@@ -66,9 +66,33 @@ class HomeVC: UIViewController, HomeView, UICollectionViewDelegate, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! HomeCollectionViewCell
         cell.nameLabel.text = customerModel.name
         
-        //TODO set the image view
+        let url = URL(string: customerModel.photoURLString(size: Double(cellSize().width)))
+        cell.pictureImageView.image = UIImage(named:GUIConstants.placeholderImageName)
+        
+        //We load the url in the background
+        DispatchQueue.global().async {
+            if let url = url {
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    cell.pictureImageView.image = UIImage(data: data!)
+                }
+            }
+        }
         
         return cell
+    }
+}
+
+extension HomeVC : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return cellSize();
+    }
+    
+    func cellSize() -> CGSize {
+        let numberOfCells: CGFloat = 2
+        let margin: CGFloat = 20
+        let cellWidth = UIScreen.main.bounds.size.width / numberOfCells
+        return CGSize(width: cellWidth - margin, height: cellWidth)
     }
 }
 

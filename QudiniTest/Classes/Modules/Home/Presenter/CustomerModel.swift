@@ -20,6 +20,10 @@ struct CustomerModel: Hashable {
         self.emailAddress = emailAddress
     }
     
+    public func photoURLString(size: Double) -> String {
+        return String.gravatarURL(emailAddress: emailAddress, size: size)
+    }
+    
     static func ==(lhs: CustomerModel, rhs: CustomerModel) -> Bool {
         return lhs.name == rhs.name && lhs.emailAddress == rhs.emailAddress
     }

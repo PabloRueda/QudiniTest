@@ -27,6 +27,7 @@
 		6E81863E1EF0558800CEE097 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81863D1EF0558800CEE097 /* Constants.swift */; };
 		6E8186401EF0567300CEE097 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81863F1EF0567300CEE097 /* HomeInteractorTests.swift */; };
 		6E8186441EF059A300CEE097 /* CustomerDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */; };
+		6E8186461EF05E7F00CEE097 /* String+Gravatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		6E81863D1EF0558800CEE097 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Classes/App/Constants.swift; sourceTree = "<group>"; };
 		6E81863F1EF0567300CEE097 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeInteractorTests.swift; path = Classes/Modules/Home/Interactor/HomeInteractorTests.swift; sourceTree = "<group>"; };
 		6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDTOTests.swift; path = Classes/Common/Network/CustomerDTOTests.swift; sourceTree = "<group>"; };
+		6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Gravatar.swift"; path = "Classes/Common/Categories/String+Gravatar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				6E8186391EF04A9300CEE097 /* String+DateFormatter.swift */,
+				6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				6E8186301EF04A9300CEE097 /* HomeCollectionViewCell.swift in Sources */,
 				6E81861B1EF04A9300CEE097 /* HomePresenter.swift in Sources */,
 				6E81862E1EF04A9300CEE097 /* CustomerModel.swift in Sources */,
+				6E8186461EF05E7F00CEE097 /* String+Gravatar.swift in Sources */,
 				6E81863A1EF04A9300CEE097 /* String+DateFormatter.swift in Sources */,
 				6E8186191EF04A9300CEE097 /* HomeVC.swift in Sources */,
 				6E81862A1EF04A9300CEE097 /* HomeConnector.swift in Sources */,
