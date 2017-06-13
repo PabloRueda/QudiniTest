@@ -36,6 +36,24 @@ class HomePresenterTests: XCTestCase {
         XCTAssertTrue(self.view.showLoadingWasCalled, "showLoading was not called!")
     }
     
+    //MARK: - HomeInteractorOutput
+    
+    func testDidReceiveCustomersSetBarModels() {
+        let customerEntity = CustomerEntity(name: "Name", emailAddress: "pablo@gmail.com", expectedTime: Date())
+        let customerModel = CustomerModel(name:customerEntity.name, emailAddress:customerEntity.emailAddress)
+        
+        sut.didReceiveCustomers(customers: [customerEntity])
+        XCTAssertTrue(self.view.hideLoadingWasCalled, "Hide loading was not called!")
+        XCTAssertTrue(self.view.setModelsWasCalled, "Set models was not called!")
+        XCTAssertEqual(self.view.models?.first!, customerModel, "Customer models are built wrong!")
+    }
+    
+    func testDidFailToReceiveCustomersShowError() {
+        sut.didFailToLoadData()
+        XCTAssertTrue(self.view.hideLoadingWasCalled, "Hide loading was not called!")
+        XCTAssertTrue(self.view.showErrorWasCalled, "Show error was not called!")
+    }
+    
     //MARK: - Mocks
     
     class HomeInteractorMock: HomeInteractorInput {

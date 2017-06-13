@@ -8,12 +8,19 @@
 
 import Foundation
 
-struct CustomerModel {
+struct CustomerModel: Hashable {
     let name: String
     let emailAddress: String?
+    var hashValue: Int {
+        return self.name.hash
+    }
     
     init(name: String, emailAddress: String?) {
         self.name = name
         self.emailAddress = emailAddress
+    }
+    
+    static func ==(lhs: CustomerModel, rhs: CustomerModel) -> Bool {
+        return lhs.name == rhs.name && lhs.emailAddress == rhs.emailAddress
     }
 }
