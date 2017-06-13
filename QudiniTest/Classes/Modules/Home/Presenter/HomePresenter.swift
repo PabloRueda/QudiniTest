@@ -18,7 +18,17 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutput {
     //MARK: - HomePresenterProtocol
     
     func viewDidLoad() {
+        self.view?.showLoading()
+        self.interactor?.loadData()
     }
     
     //MARK: - HomeInteractorOutput
+    
+    func didReceiveCustomers(customers: [CustomerEntity]) {
+        //TODO
+    }
+    
+    func didFailToLoadData() {
+        //TODO
+    }
 }
