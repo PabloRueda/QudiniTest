@@ -7,7 +7,18 @@
 //
 
 protocol HomePresenterProtocol: class {
+    func viewDidLoad()
 }
 
 class HomePresenter: HomePresenterProtocol, HomeInteractorOutput {
+    
+    weak internal var view : HomeView!
+    internal var interactor : HomeInteractorInput!
+    
+    //MARK: - HomePresenterProtocol
+    
+    func viewDidLoad() {
+    }
+    
+    //MARK: - HomeInteractorOutput
 }

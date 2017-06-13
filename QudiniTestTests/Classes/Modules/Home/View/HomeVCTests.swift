@@ -11,13 +11,32 @@ import XCTest
 
 class HomeVCTests: XCTestCase {
     
+    var sut: HomeVC!
+    var presenter: HomePresenterMock!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        presenter = HomePresenterMock()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(withIdentifier: "HomeVCID") as! HomeVC
+        sut.presenter = presenter
+        let _ = sut.view
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testViewDidLoadCallPresenter() {
+        self.sut.viewDidLoad()
+        
+        XCTAssertTrue(self.presenter.viewDidLoadWasCalled, "View did load was not called!")
+    }
+    
+    //MARK: - Mocks
+    
+    class HomePresenterMock: HomePresenterProtocol {
+        var viewDidLoadWasCalled = false
+        
+        func viewDidLoad() {
+            self.viewDidLoadWasCalled = true
+        }
     }
 }

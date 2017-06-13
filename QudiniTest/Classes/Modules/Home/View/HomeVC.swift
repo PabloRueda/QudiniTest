@@ -12,6 +12,12 @@ protocol HomeView: class {
 }
 
 class HomeVC: UIViewController, HomeView {
+    internal var presenter: HomePresenterProtocol!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.presenter?.viewDidLoad()
+    }
 }
 
