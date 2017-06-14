@@ -8,11 +8,30 @@
 
 import Foundation
 
+// MARK: - Dependencies protocols
+
+typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
+}
+
+// MARK: - HTTPClient
+
 protocol HTTPClientProtocol {
     func requestCustomers(completed: @escaping ([CustomerDTO]?, Error?) -> Void)
 }
 
 class HTTPClient: NSObject, HTTPClientProtocol {
+    fileprivate let session: URLSessionProtocol
+    
+    init(sessionCreator: () -> URLSessionProtocol = HTTPClient.defaultSession()) {
+        self.session = sessionCreator()
+    }
     
     func requestCustomers(completed: @escaping ([CustomerDTO]?, Error?) -> Void) {
         //We set the authentication field
@@ -23,13 +42,7 @@ class HTTPClient: NSObject, HTTPClientProtocol {
         var request = URLRequest(url: URL(string:NetworkConstants.url)!)
         request.setValue("Basic \(authenticationValue)", forHTTPHeaderField: "Authorization")
         
-        //We disable cache
-        let configuration = URLSessionConfiguration.default
-        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-        configuration.urlCache = nil
-        let session = URLSession.init(configuration: configuration)
-        
-        let task = session.dataTask(with: request) {(data, response, error) in
+        let task = self.session.dataTask(with: request) {(data, response, error) in
             do {
                 guard let data = data else {
                     throw SerializationError.missing("Data")
@@ -70,4 +83,22 @@ class HTTPClient: NSObject, HTTPClientProtocol {
         
         task.resume()
     }
+    
+    // MARK: - Default dependencies
+    
+    class func defaultSession() -> (() -> URLSessionProtocol) {
+        //We disable cache
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        configuration.urlCache = nil
+        return { URLSession.init(configuration: configuration) }
+    }
 }
+
+extension URLSession: URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
+        return (dataTask(with:request, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
+    }
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol {}

@@ -29,6 +29,7 @@
 		6E8186441EF059A300CEE097 /* CustomerDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */; };
 		6E8186461EF05E7F00CEE097 /* String+Gravatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */; };
 		6E8186481EF0703F00CEE097 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E8186471EF0703F00CEE097 /* Localizable.strings */; };
+		6EC242081EF13B9900385591 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC242071EF13B9900385591 /* HTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDTOTests.swift; path = Classes/Common/Network/CustomerDTOTests.swift; sourceTree = "<group>"; };
 		6E8186451EF05E7F00CEE097 /* String+Gravatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Gravatar.swift"; path = "Classes/Common/Categories/String+Gravatar.swift"; sourceTree = "<group>"; };
 		6E8186471EF0703F00CEE097 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Others/Localizable.strings; sourceTree = "<group>"; };
+		6EC242071EF13B9900385591 /* HTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPClientTests.swift; path = Classes/Common/Network/HTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +327,7 @@
 		6E8186421EF0598200CEE097 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6EC242071EF13B9900385591 /* HTTPClientTests.swift */,
 				6E8186431EF059A300CEE097 /* CustomerDTOTests.swift */,
 			);
 			name = Network;
@@ -458,6 +461,7 @@
 			files = (
 				6E81862C1EF04A9300CEE097 /* HomeConnectorTests.swift in Sources */,
 				6E8186281EF04A9300CEE097 /* HomeVCTests.swift in Sources */,
+				6EC242081EF13B9900385591 /* HTTPClientTests.swift in Sources */,
 				6E8186341EF04A9300CEE097 /* HomePresenterTests.swift in Sources */,
 				6E8186441EF059A300CEE097 /* CustomerDTOTests.swift in Sources */,
 				6E8186401EF0567300CEE097 /* HomeInteractorTests.swift in Sources */,
@@ -668,6 +672,7 @@
 				6E8185FB1EF04A9300CEE097 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E8185FC1EF04A9300CEE097 /* Build configuration list for PBXNativeTarget "QudiniTestTests" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +681,7 @@
 				6E8185FE1EF04A9300CEE097 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
